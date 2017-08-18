@@ -13,6 +13,11 @@ import { trigger, state, transition, style, animate } from "@angular/animations"
           backgroundColor: 'yellow', opacity:0
         }),
         animate(2000)
+      ]),
+      transition('* => void',[        
+        animate(2000, style({
+          opacity:0
+        }))
       ])
     ])
   ]
