@@ -1,10 +1,23 @@
 import { Component } from '@angular/core';
+import { trigger, state, transition, style, animate } from "@angular/animations";
 
 @Component({
   selector: 'todos',
   templateUrl: './todos.component.html',
   styleUrls: ['./todos.component.css'],
+  animations: [
+    trigger('fade',[
+      // state(),
+      transition('void => *',[
+        style({
+          backgroundColor: 'yellow', opacity:0
+        }),
+        animate(2000)
+      ])
+    ])
+  ]
 })
+
 export class TodosComponent {
   items: any[] = [
     'Wash the dishes', 
